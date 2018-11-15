@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="clickListener"
+                type="android.view.View.OnClickListener"/>
+        <variable
+                name="item"
+                type="com.demo.rssfeedreader.data.RssFeedItem"/>
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{clickListener}" android:layout_margin="10dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                    android:id="@+id/news_item_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    tools:src="@tools:sample/backgrounds/scenic"
+                    android:scaleType="centerCrop"
+                    app:imageUrl="@{item.imageLink}"
+            />
+            <TextView
+                    android:text="@{@string/pubdate_format(item.pubDate)}"
+                    tools:text="Sunday 18 july - 18:30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/new_item_pubdate"
+                    android:background="@color/colorPrimaryDark" android:textSize="18sp"
+                    android:textColor="@android:color/white" android:paddingEnd="10dp" android:paddingStart="10dp"
+                    android:paddingBottom="2dp" android:paddingTop="2dp"/>
+
+            <TextView
+                    android:id="@+id/news_item_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@{item.title}"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    tools:text="News title" android:layout_below="@+id/news_item_image"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

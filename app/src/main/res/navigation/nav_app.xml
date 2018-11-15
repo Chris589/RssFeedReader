@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_app"
+            app:startDestination="@id/news_list_fragment"
+            xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+            android:id="@+id/news_list_fragment"
+            android:name="com.demo.rssfeedreader.NewsListFragment"
+            android:label="@string/news_list_fragment_title"
+            tools:layout="@layout/fragment_news_list">
+        <action
+                android:id="@+id/action_list_to_detail"
+                app:destination="@id/news_detail_fragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+    </fragment>>
+
+    <fragment
+            android:id="@+id/news_detail_fragment"
+            android:name="com.demo.rssfeedreader.NewsDetailFragment"
+            android:label="@string/news_detail_fragment_title"
+            tools:layout="@layout/fragment_news_detail">
+        <argument
+                android:name="itemTitle"
+                app:argType="string" />
+    </fragment>
+</navigation>

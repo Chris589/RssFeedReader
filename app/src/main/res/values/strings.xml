@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RSSFeedReader</string>
+    <string name="news_list_fragment_title">Actualités</string>
+    <string name="news_detail_fragment_title">Information</string>
+    <string name="pubdate_format">%1$tA, %1$td %1$tB %1$tY - %1$tH:%1$tM</string>
+    <string name="see_full_news">Voir l\'article complet</string>
+</resources>
